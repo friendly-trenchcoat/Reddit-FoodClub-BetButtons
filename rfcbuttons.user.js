@@ -4,6 +4,9 @@
 // @description    Maintains your bet amount and places handy-dandy direct bet links next to each bet (piggybacks off of diceroll123's stuff)
 // @include        https://www.reddit.com/r/neopets/comments/*/food_club_bets_*
 // @include        http://www.neopets.com/pirates/foodclub.phtml?type=current_bets
+// @grant          GM_getValue
+// @grant          GM_setValue
+// @require	       http://code.jquery.com/jquery-latest.min.js
 // ==/UserScript==
 
 /*
