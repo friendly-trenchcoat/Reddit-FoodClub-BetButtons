@@ -10,6 +10,8 @@
 // ==/UserScript==
 
 /*
+For Chrome
+
 HOT TIPS!
 I can't figure out a way to make it not switch you to the tab the button opens!
 For a less annoying experience:
@@ -20,6 +22,8 @@ For a less annoying experience:
 ALSO: Don't like how the bet amount button scrolls with you? Scroll down and read how to change it.
 
 ALSO ALSO: There's nothing to stop you from submitting bets from past days. Try not to do this.
+
+Enjoy!
 */
 
 if(document.URL.indexOf("comments") != -1) {
