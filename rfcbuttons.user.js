@@ -79,6 +79,7 @@ if(document.URL.indexOf("comments") != -1) {
                 var arena = $(v).children().eq(i);//.css("background-color", "#ffc");  // HEY YOU THERE, delete ";//" after "eq(i)" if colorful tables gets you off*********************
                 if (pirates.indexOf(arena.text()) < 0){ // don't draw a button if the pirate is not in the list
                     $(v).append('Invalid');
+                    arena.css("background-color", "#ffc"); // highlightes the offending pirate
                     return;
                 }
                 pirateIDs[i-1] = pirates.indexOf(arena.text());
