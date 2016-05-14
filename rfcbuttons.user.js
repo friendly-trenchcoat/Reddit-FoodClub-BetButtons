@@ -10,7 +10,7 @@
 // ==/UserScript==
 
 /*
-For Chrome
+Should work with any browser with Tampermonkey
 
 HOT TIPS!
 I can't figure out a way to make it not switch you to the tab the button opens!
