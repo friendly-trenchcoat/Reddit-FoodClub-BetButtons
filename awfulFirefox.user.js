@@ -1,7 +1,7 @@
 // ==UserScript==
 // @author         friendly-trenchcoat
 // @name           Reddit - Food Club Bet Buttons (FireFox)
-// @description    Maintains your bet amount and places handy-dandy direct bet links next to each bet (piggybacks off of diceroll123's stuff)
+// @description    Maintains your bet amount and places semi-handy-dandy direct bet links above to each bet table (piggybacks off of diceroll123's stuff)
 // @include        https://www.reddit.com/r/neopets/comments/*/food_club_bets_*
 // @include        http://www.neopets.com/pirates/foodclub.phtml?type=current_bets
 // @grant          GM_getValue
@@ -12,7 +12,9 @@
 /*
 THIS IS THE FIREFOX VERSION
 ITS TERRIBLE
-USE CHROME, REALLY, PLEASE
+USE LITERALLY ANYTHING ELSE, REALLY, PLEASE
+Tampermonkey is love, greasemonkey is poo
+But if you want poo, here's your poo
 
 HOT TIPS!
 I can't figure out a way to make it not switch you to the tab the button opens! 
@@ -27,7 +29,7 @@ ALSO ALSO: There's nothing to stop you from submitting bets from past days. Try 
 */
 
 if(document.URL.indexOf("comments") != -1) {
-    // BET AMOUNT BUTTON        who knows if this works :D 
+    // BET AMOUNT BUTTON        
     var today = new Date();
     var offset = Math.floor(today.getTimezoneOffset() / 60) - 7;  // difference between UTC and local time in hours, - 8
     today.setHours(today.getHours() + offset);
@@ -41,13 +43,14 @@ if(document.URL.indexOf("comments") != -1) {
         betAmt = GM_getValue("iBetAmt") + (days*2); // final bet amount 
         title = betAmt;
 
-        // just testing stuff
+        // just testing stuff 
+        /*
         console.log("START: "+startDate);
         console.log("TODAY: "+today);
         console.log("DAYS PASSED: "+days);
         console.log("OLD BET: "+GM_getValue("iBetAmt"));
         console.log("NEW BET: "+betAmt);
-
+        */
     }
     var betAmtButton = $('<button/>', {  
         text: "bet amount: "+title,
@@ -71,14 +74,19 @@ if(document.URL.indexOf("comments") != -1) {
     
     
     // BET BUTTONS
-    var pirates = ['Dan', 'Sproggie', 'Orvinn', 'Lucky', 'Edmund', 'Peg Leg', 'Bonnie', 'Puffo', 'Stuff', 'Squire', 'Crossblades', 'Stripey', 'Ned', 'Fairfax', 'Gooblah', 'Franchisco', 'Federismo', 'Blackbeard', 'Buck', 'Tailhook'];
+    var pirates = ['', 'Dan', 'Sproggie', 'Orvinn', 'Lucky', 'Edmund', 'Peg Leg', 'Bonnie', 'Puffo', 'Stuff', 'Squire', 'Crossblades', 'Stripey', 'Ned', 'Fairfax', 'Gooblah', 'Franchisco', 'Federismo', 'Blackbeard', 'Buck', 'Tailhook'];
     var pirateIDs = [0,0,0,0,0]; // five arenas
     var e=0; // e for ew
     $("tbody").children().each(function(k,v) {
         if ($(v).children().length == 7){ //if it's actually a bet table        
             for (var i=1; i<6; i++){ //for each column 
                 var arena = $(v).children().eq(i);//.css("background-color", "#ffc");  // delete ";//" if colorful tables gets you off
-                pirateIDs[i-1] = pirates.indexOf(arena.text())+1;
+                if (pirates.indexOf(arena.text()) < 0){ // don't draw a button if the pirate is not in the list
+                    $(v).append('Invalid');
+                    arena.css("background-color", "#ffc");
+                    return;
+                }
+                pirateIDs[i-1] = pirates.indexOf(arena.text());
                 if (pirateIDs[i-1] == 0) {
                     pirateIDs[i-1] = '<input type="hidden" name="winner'+i+'" value="">';
                 }
