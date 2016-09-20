@@ -4,3 +4,6 @@ Maintains bet amount and places bet buttons (piggybacks off of diceroll123's stu
 Best used in single window to make going between tabs easier
  - CTRL+SHIFT+TAB   go to tab to the left
  - CTRL+TAB         go to tab to the right
+
+
+![Screenshot](https://puu.sh/rhPIw/5f19e40ed8.png "Screenshot")
