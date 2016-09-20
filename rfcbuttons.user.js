@@ -27,7 +27,7 @@ Enjoy!
 */
 
 if(document.URL.indexOf("comments") != -1) {
-    // BET AMOUNT BUTTON        who knows if this works :D
+    // BET AMOUNT BUTTON
     var today = new Date();
     var offset = Math.floor(today.getTimezoneOffset() / 60) - 7;  // difference between UTC and local time in hours, - 8
     today.setHours(today.getHours() + offset);
