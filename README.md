@@ -10,7 +10,7 @@ Best used in single window to make going between tabs easier
 
 Note: /u/ThisisDivi is not associated with me or this script
 
-<br><br>
+<br>
 #
 ###FoodClub Series:
 - [Previous Round](https://github.com/friendly-trenchcoat/foodclub-Previous-Round)
