@@ -7,3 +7,5 @@ Best used in single window to make going between tabs easier
 
 
 ![Screenshot](https://puu.sh/rhPIw/5f19e40ed8.png "Screenshot")
+
+Note: /u/ThisisDivi is not associated with me or this script
