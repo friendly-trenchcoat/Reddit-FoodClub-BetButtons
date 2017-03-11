@@ -9,3 +9,10 @@ Best used in single window to make going between tabs easier
 ![Screenshot](https://puu.sh/rhPIw/5f19e40ed8.png "Screenshot")
 
 Note: /u/ThisisDivi is not associated with me or this script
+
+<br><br>
+#
+###FoodClub Series:
+- [Previous Round](https://github.com/friendly-trenchcoat/foodclub-Previous-Round)
+- [Highlight Winners](https://github.com/friendly-trenchcoat/Reddit-FoodClub-Highlight-Winners)
+- [Bet Buttons](https://github.com/friendly-trenchcoat/Reddit-FoodClub-BetButtons)
