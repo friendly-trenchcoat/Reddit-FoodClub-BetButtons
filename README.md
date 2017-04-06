@@ -4,7 +4,7 @@ Maintains bet amount and places bet buttons (piggybacks off of diceroll123's stu
 Should work with any browser with Tampermonkey ********NOW INCLUDING FIREFOX!********
 
 **HOT TIPS!**      
-Because it is a form submission, I can't make it not switch you to the tab the button opens!
+Because it is a form submission, I can't make it not switch you to the tab the button opens!      
 For a less annoying experience:
  - Open food club thread in it's own window
  - For each bet:
@@ -13,8 +13,8 @@ For a less annoying experience:
  - The table on the "Current Bets" page will be highlighted in yellow when all 10 are placed
  - Now you can just X out the whole window
 
-ALSO: Don't like how the bet amount button scrolls with you? Scroll down and read how to change it.
-ALSO ALSO: There's nothing to stop you from submitting bets from past days. Try not to do this.
+ALSO: Don't like how the bet amount button scrolls with you? Scroll down and read how to change it.     
+ALSO ALSO: There's nothing to stop you from submitting bets from past days. Try not to do this.      
 ALSO ALSO ALSO: There is no way to prevent Firefox from asking if you're really really sure you wanna place this bet every. single. time.
 
 Enjoy!
