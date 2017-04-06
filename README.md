@@ -22,7 +22,7 @@ Enjoy!
 
 ![Screenshot](https://puu.sh/rhPIw/5f19e40ed8.png "Screenshot")
 
-Note: /u/ThisisDivi, /u/diceroll123, and Neopets.com are not associated with me or this script
+Note: /u/ThisisDivi and /u/diceroll123 are not associated with me or this script
 
 <br>
 
