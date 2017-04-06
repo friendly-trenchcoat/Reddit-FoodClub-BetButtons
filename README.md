@@ -3,8 +3,7 @@ Maintains bet amount and places bet buttons (piggybacks off of diceroll123's stu
 
 Should work with any browser with Tampermonkey ********NOW INCLUDING FIREFOX!********
 
-**HOT TIPS!**
-
+**HOT TIPS!**      
 Because it is a form submission, I can't make it not switch you to the tab the button opens!
 For a less annoying experience:
  - Open food club thread in it's own window
