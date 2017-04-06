@@ -8,8 +8,8 @@ Because it is a form submission, I can't make it not switch you to the tab the b
 For a less annoying experience:
  - Open food club thread in it's own window
  - For each bet:
-  - Click bet button
-  - CTRL+SHIFT+TAB   go to tab to the left (aka the reddit tab)
+  * Click bet button
+  * CTRL+SHIFT+TAB   go to tab to the left (aka the reddit tab)
  - The table on the "Current Bets" page will be highlighted in yellow when all 10 are placed
  - Now you can just X out the whole window
 
