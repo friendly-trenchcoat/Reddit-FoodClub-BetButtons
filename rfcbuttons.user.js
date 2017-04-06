@@ -2,6 +2,7 @@
 // @author         friendly-trenchcoat
 // @name           Reddit - Food Club Bet Buttons
 // @description    Maintains your bet amount and places handy-dandy direct bet links next to each bet (piggybacks off of diceroll123's stuff)
+// @version        1.2
 // @include        https://www.reddit.com/r/neopets/comments/*/food_club_bets_*
 // @include        http://www.neopets.com/pirates/foodclub.phtml?type=current_bets
 // @grant          GM_getValue
@@ -10,18 +11,21 @@
 // ==/UserScript==
 
 /*
-Should work with any browser with Tampermonkey
+Should work with any browser with Tampermonkey ********NOW INCLUDING FIREFOX!********
 
 HOT TIPS!
-I can't figure out a way to make it not switch you to the tab the button opens!
+Because it is a form submission, I can't make it not switch you to the tab the button opens!
 For a less annoying experience:
- - Best used in single window
- - CTRL+SHIFT+TAB   go to tab to the left
- - CTRL+TAB         go to tab to the right
+ - Open food club thread in it's own window
+ - For each bet:
+   - Click bet button
+   - CTRL+SHIFT+TAB   go to tab to the left (aka the reddit tab)
+ - The table on the "Current Bets" page will be highlighted in yellow when all 10 are placed
+ - Now you can just X out the whole window
 
 ALSO: Don't like how the bet amount button scrolls with you? Scroll down and read how to change it.
-
 ALSO ALSO: There's nothing to stop you from submitting bets from past days. Try not to do this.
+ALSO ALSO ALSO: There is no way to prevent Firefox from asking if you're really really sure you wanna place this bet every. single. time.
 
 Enjoy!
 */
@@ -93,7 +97,7 @@ if(document.URL.indexOf("comments") != -1) {
             var odds = $(v).children().eq(6).text().slice(0, -2);
             var winnings = odds*betAmt;
 
-            $(v).append('<form action="http://www.neopets.com/pirates/process_foodclub.phtml" target="_blank" method="post" name="bet_form">'+pirateIDs.join("")+'<input type="hidden" name="bet_amount" value="'+betAmt+'"><input type="hidden" name="total_odds" value="'+odds+'"><input type="hidden" name="winnings" value="'+winnings+'"><input type="hidden" name="type" value="bet"><input type="submit" value="BET"></form>');
+            $(v).append('<td><form action="http://www.neopets.com/pirates/process_foodclub.phtml" target="_blank" method="post" name="bet_form">'+pirateIDs.join("")+'<input type="hidden" name="bet_amount" value="'+betAmt+'"><input type="hidden" name="total_odds" value="'+odds+'"><input type="hidden" name="winnings" value="'+winnings+'"><input type="hidden" name="type" value="bet"><input type="submit" value="BET"></form></td>');
 
         }
     });
