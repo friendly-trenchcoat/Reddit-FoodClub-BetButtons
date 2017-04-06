@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name           Reddit - Food Club Bet Buttons
 // @namespace      https://github.com/friendly-trenchcoat
-// @version        1.2
+// @version        1.3
 // @description    Maintains your bet amount and places handy-dandy direct bet links next to each bet (piggybacks off of diceroll123's stuff)
 // @author         friendly-trenchcoat
 // @include        https://www.reddit.com/r/neopets/comments/*/food_club_bets_*
@@ -13,7 +13,6 @@
 
 /*
 Should work with any browser with Tampermonkey ********NOW INCLUDING FIREFOX!********
-
 HOT TIPS!
 Because it is a form submission, I can't make it not switch you to the tab the button opens!
 For a less annoying experience:
@@ -23,13 +22,23 @@ For a less annoying experience:
    - CTRL+SHIFT+TAB   go to tab to the left (aka the reddit tab)
  - The table on the "Current Bets" page will be highlighted in yellow when all 10 are placed
  - Now you can just X out the whole window
-
 ALSO: Don't like how the bet amount button scrolls with you? Scroll down and read how to change it.
 ALSO ALSO: There's nothing to stop you from submitting bets from past days. Try not to do this.
 ALSO ALSO ALSO: There is no way to prevent Firefox from asking if you're really really sure you wanna place this bet every. single. time.
 
+UPDATE 4/6/17: 
+You can now add aliases for pirates. Include the alias in the same element of the pirates array as the pirate's default name.
+Please use aliases that do not appear inside any other pirate's string of names, or you may encounter issues. 
+
 Enjoy!
 */
+
+function multiIndex(arr, match) { // reurns he index of the first partial match... because some people got a beef with bonnie
+    for (var i=0; i<arr.length; i++) {
+        if (arr[i].includes(match)) return i;
+    }
+    return -1;
+}
 
 if(document.URL.indexOf("comments") != -1) {
     // BET AMOUNT BUTTON
@@ -76,18 +85,18 @@ if(document.URL.indexOf("comments") != -1) {
 
 
     // BET BUTTONS
-    var pirates = ['', 'Dan', 'Sproggie', 'Orvinn', 'Lucky', 'Edmund', 'Peg Leg', 'Bonnie', 'Puffo', 'Stuff', 'Squire', 'Crossblades', 'Stripey', 'Ned', 'Fairfax', 'Gooblah', 'Franchisco', 'Federismo', 'Blackbeard', 'Buck', 'Tailhook'];
+    var pirates = ['', 'Dan', 'Sproggie', 'Orvinn', 'Lucky', 'Edmund', 'Peg Leg', 'Bonnie Pip', 'Puffo', 'Stuff', 'Squire', 'Crossblades', 'Stripey', 'Ned', 'Fairfax', 'Gooblah', 'Franchisco', 'Federismo', 'Blackbeard', 'Buck', 'Tailhook'];
     var pirateIDs = [0,0,0,0,0]; // five arenas
     $("tbody").children().each(function(k,v) {
         if ($(v).children().length == 7){ //if it's actually a bet table
             for (var i=1; i<6; i++){ //for each column
                 var arena = $(v).children().eq(i);//.css("background-color", "#ffc");  // HEY YOU THERE, delete ";//" after "eq(i)" if colorful tables gets you off*********************
-                if (pirates.indexOf(arena.text()) < 0){ // don't draw a button if the pirate is not in the list
+                if (multiIndex(pirates, arena.text()) < 0){ // don't draw a button if the pirate is not in the list
                     $(v).append('Invalid');
                     arena.css("background-color", "#ffc"); // highlightes the offending pirate
                     return;
                 }
-                pirateIDs[i-1] = pirates.indexOf(arena.text());
+                pirateIDs[i-1] = multiIndex(pirates, arena.text());
                 if (pirateIDs[i-1] === 0) {
                     pirateIDs[i-1] = '<input type="hidden" name="winner'+i+'" value="">';
                 }
