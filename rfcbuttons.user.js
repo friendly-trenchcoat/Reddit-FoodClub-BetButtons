@@ -1,8 +1,9 @@
 // ==UserScript==
-// @author         friendly-trenchcoat
 // @name           Reddit - Food Club Bet Buttons
-// @description    Maintains your bet amount and places handy-dandy direct bet links next to each bet (piggybacks off of diceroll123's stuff)
+// @namespace      https://github.com/friendly-trenchcoat
 // @version        1.2
+// @description    Maintains your bet amount and places handy-dandy direct bet links next to each bet (piggybacks off of diceroll123's stuff)
+// @author         friendly-trenchcoat
 // @include        https://www.reddit.com/r/neopets/comments/*/food_club_bets_*
 // @include        http://www.neopets.com/pirates/foodclub.phtml?type=current_bets
 // @grant          GM_getValue
