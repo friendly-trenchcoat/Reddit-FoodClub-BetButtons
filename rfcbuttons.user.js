@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name           Reddit - Food Club Bet Buttons
 // @namespace      https://github.com/friendly-trenchcoat
-// @version        1.3
+// @version        1.4
 // @description    Maintains your bet amount and places handy-dandy direct bet links next to each bet (piggybacks off of diceroll123's stuff)
 // @author         friendly-trenchcoat
 // @include        https://www.reddit.com/r/neopets/comments/*/food_club_bets_*
@@ -26,9 +26,9 @@ ALSO: Don't like how the bet amount button scrolls with you? Scroll down and rea
 ALSO ALSO: There's nothing to stop you from submitting bets from past days. Try not to do this.
 ALSO ALSO ALSO: There is no way to prevent Firefox from asking if you're really really sure you wanna place this bet every. single. time.
 
-UPDATE 4/6/17: 
+UPDATE 4/6/17:
 You can now add aliases for pirates. Include the alias in the same element of the pirates array as the pirate's default name.
-Please use aliases that do not appear inside any other pirate's string of names, or you may encounter issues. 
+Please use aliases that do not appear inside any other pirate's string of names, or you may encounter issues.
 
 Enjoy!
 */
@@ -68,11 +68,13 @@ if(document.URL.indexOf("comments") != -1) {
         id: "betAmtButton",
         click: function () {
             var iBetAmt = prompt("Bet amount: ", betAmt);
-            GM_setValue("iBetAmt", Number(iBetAmt));
-            GM_setValue("startDate", today);
-            betAmt = Number(iBetAmt);
-            $(this).text("bet amount: "+betAmt);
-            location.reload();
+            if (iBetAmt){ // if not cancelled
+                GM_setValue("iBetAmt", Number(iBetAmt));
+                GM_setValue("startDate", today);
+                betAmt = Number(iBetAmt);
+                $(this).text("bet amount: "+betAmt);
+                location.reload();
+            }
         }
     });
     $("[class='sitetable nestedlisting']").prepend(betAmtButton);
