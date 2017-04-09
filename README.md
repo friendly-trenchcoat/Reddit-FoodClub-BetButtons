@@ -27,6 +27,5 @@ Note: /u/ThisisDivi and /u/diceroll123 are not associated with me or this script
 <br>
 
 **FoodClub Series:**
-* [Previous Round](https://github.com/friendly-trenchcoat/foodclub-Previous-Round)
-* [Highlight Winners](https://github.com/friendly-trenchcoat/Reddit-FoodClub-Highlight-Winners)
+* [Auto-Highlight Winners](https://github.com/friendly-trenchcoat/Reddit-FoodClub-AUTOHighlight-Winners)
 * [Bet Buttons](https://github.com/friendly-trenchcoat/Reddit-FoodClub-BetButtons)
