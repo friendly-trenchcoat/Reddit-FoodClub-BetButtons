@@ -13,7 +13,7 @@ For a less annoying experience:
  - The table on the "Current Bets" page will be highlighted in yellow when all 10 are placed
  - Now you can just X out the whole window
 
-ALSO: Don't like how the bet amount button scrolls with you? Scroll down and read how to change it.     
+ALSO: Don't like how the bet amount button scrolls with you? Check comments in code to read how to change it.     
 ALSO ALSO: There's nothing to stop you from submitting bets from past days. Try not to do this.      
 ALSO ALSO ALSO: There is no way to prevent Firefox from asking if you're really really sure you wanna place this bet every. single. time.
 
