@@ -106,10 +106,18 @@ if(document.URL.indexOf("comments") != -1) {
                     pirateIDs[i-1] = '<input type="hidden" name="matches[]" value="'+i+'">' + '<input type="hidden" name="winner'+i+'" value="'+pirateIDs[i-1]+'">';
                 }
             }
+            var newbetAmt = betAmt;
             var odds = $(v).children().eq(6).text().slice(0, -2);
-            var winnings = odds*betAmt;
+            var winnings = odds*newbetAmt;
 
-            $(v).append('<td><form action="http://www.neopets.com/pirates/process_foodclub.phtml" target="_blank" method="post" name="bet_form">'+pirateIDs.join("")+'<input type="hidden" name="bet_amount" value="'+betAmt+'"><input type="hidden" name="total_odds" value="'+odds+'"><input type="hidden" name="winnings" value="'+winnings+'"><input type="hidden" name="type" value="bet"><input type="submit" value="BET"></form></td>');
+            if (winnings > 1000000) {
+                newbetAmt = Math.ceil(1000000 / odds); // Better to waste a couple neopoints than missing on some?
+                winnings = odds*newbetAmt;
+
+                console.log(odds, newbetAmt, winnings);
+            }
+
+            $(v).append('<td><form action="http://www.neopets.com/pirates/process_foodclub.phtml" target="_blank" method="post" name="bet_form">'+pirateIDs.join("")+'<input type="hidden" name="bet_amount" value="'+newbetAmt+'"><input type="hidden" name="total_odds" value="'+odds+'"><input type="hidden" name="winnings" value="'+winnings+'"><input type="hidden" name="type" value="bet"><input type="submit" value="BET"></form></td>');
 
         }
     });
