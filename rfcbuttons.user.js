@@ -92,7 +92,7 @@ if(document.URL.indexOf("comments") != -1) {
     $("tbody").children().each(function(k,v) {
         if ($(v).children().length == 7){ //if it's actually a bet table
             for (var i=1; i<6; i++){ //for each column
-                var arena = $(v).children().eq(i);//.css("background-color", "#ffc");  // HEY YOU THERE, delete ";//" after "eq(i)" if colorful tables gets you off*********************
+                var arena = $(v).children().eq(i).css("background-color", "#ffc");  // HEY YOU THERE, delete ";//" after "eq(i)" if colorful tables gets you off*********************
                 if (multiIndex(pirates, arena.text()) < 0){ // don't draw a button if the pirate is not in the list
                     $(v).append('Invalid');
                     arena.css("background-color", "#ffc"); // highlightes the offending pirate
